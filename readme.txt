@@ -6,3 +6,4 @@ My stuipd class prefers SVN.
 test for readme.
 i&i
 Creating a new branch is quick and Simple.
+Git is free software...
