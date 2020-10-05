@@ -5,4 +5,4 @@ Git tracks changes of files haha.
 My stuipd class prefers SVN.
 test for readme.
 iii
-Creating a new branch is quick and simple.
+Creating a new branch is quick and Simple.
