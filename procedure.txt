@@ -1,0 +1,61 @@
+存储过程学习：
+判断：
+if 条件 then
+  逻辑语句;
+end if;
+循环：
+首先
+DECLARE CURSOR curosr_name IS 查询语句;
+然后
+for 变量名 in curosr_name loop
+  逻辑语句;
+end loop;
+--可使用begin-end把for...end loop部分的包括起来
+
+创建语法：
+create or replace PROCEDURE procedure_name(入参名称1 in 数据类型,...,出参名称1 out 数据类型,...)
+is
+--后续使用到的变量
+变量1 数据类型;
+...
+begin
+逻辑语句;
+end procedure_name;
+
+
+变量赋值：
+变量名称:=值;
+查询单条记录赋值：
+select 字段1,字段2 into 变量1,变量2 from table_name where 条件;
+
+
+当某些语句是完成同个功能的可使用
+begin
+  逻辑语句;
+end;
+包括起来，表示一个代码块
+
+
+当进行增、删、改时可能会发生异常所以在增、删、改语句后面（其它需要异常处理也是如此）
+--异常提示信息可从sqlerrm获取，直接拼接字符串即可
+--OTHERS为一种异常类型，还有其它类型
+--异常信息可从一些内置变量获得
+EXCEPTION
+WHEN OTHERS THEN
+    rollback;
+    出参变量赋值语句;
+    return;
+--可使用begin-end包括起来
+
+
+回滚操作：
+rollback;
+提交操作：
+commit;
+跳出当前循环；
+contiune;
+停止存储过程的执行：
+return;
+--return后可跟一个整数值，默认为0
+跳出整个循环：
+exit;
