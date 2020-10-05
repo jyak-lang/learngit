@@ -3,6 +3,15 @@
 if 条件 then
   逻辑语句;
 end if;
+或者
+if 条件 then
+  逻辑语句;
+elseif 条件 then
+  逻辑语句;
+else
+  逻辑语句;
+end if;
+
 循环：
 循环游标cursor：
 首先
