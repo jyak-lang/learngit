@@ -59,3 +59,15 @@ return;
 --return后可跟一个整数值，默认为0
 跳出整个循环：
 exit;
+
+
+PL/SQL中测试：
+打开Test Window
+格式为
+declare
+  定义变量;
+begin
+  存储过程
+end;
+
+
