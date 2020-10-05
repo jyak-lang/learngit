@@ -11,6 +11,11 @@ for 变量名 in curosr_name loop
   逻辑语句;
 end loop;
 --可使用begin-end把for...end loop部分的包括起来
+另一种方式
+while 条件 loop
+  逻辑语句;
+end loop;
+
 
 创建语法：
 create or replace PROCEDURE procedure_name(入参名称1 in 数据类型,...,出参名称1 out 数据类型,...)
@@ -41,11 +46,15 @@ end;
 --OTHERS为一种异常类型，还有其它类型
 --异常信息可从一些内置变量获得
 EXCEPTION
+WHEN VALUE_ERROR THEN
+   rollback;
+    出参变量赋值语句;
+    return;
 WHEN OTHERS THEN
     rollback;
     出参变量赋值语句;
     return;
---可使用begin-end包括起来
+--可使用begin-end将这整个包括起来
 
 
 回滚操作：
