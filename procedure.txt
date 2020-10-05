@@ -4,6 +4,7 @@ if 条件 then
   逻辑语句;
 end if;
 循环：
+循环游标cursor：
 首先
 DECLARE CURSOR curosr_name IS 查询语句;
 然后
@@ -11,6 +12,16 @@ for 变量名 in curosr_name loop
   逻辑语句;
 end loop;
 --可使用begin-end把for...end loop部分的包括起来
+另一种循环游标：
+begin
+  open cursor_name;
+  loop
+    fetch 变量1,变量2,...; --按索引顺序对应游标里的字段
+    exit when cursor_name%notfound;
+    逻辑语句;
+  end loop;
+end;
+
 另一种方式
 while 条件 loop
   逻辑语句;
